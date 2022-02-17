@@ -24,34 +24,26 @@ renderer.render(scene, camera);
 //adding object
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100 );
 //sets the looks of the object
-const material = new THREE.MeshStandardMaterial({color: 0xffffff, wireframe:true});
+const material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe:true});
 //creates object
 const torus = new THREE.Mesh(geometry, material);
+
 //adds to the scene
 scene.add(torus);
 
-//emits light like light bulb
-const pointlight = new THREE.PointLight(0xffffff);
-//sets position
-pointlight.position.set(5, 5, 5);
 
-//emits light
-const ambientlight = new THREE.AmbientLight(0xffffff);
-
-
-//adds lights
-scene.add(pointlight, ambientlight);
-
-//adds wireframe around the pointlight
-const LightHelper = new THREE.PointLightHelper(pointlight);
 //adds grid helper
 const GridHelper = new THREE.GridHelper(200,50);
 //adds helpers
-scene.add(LightHelper, GridHelper);
+scene.add( GridHelper);
 
-//allows user to interact with mouse
-const controls = new OrbitControls(camera, renderer.domElement);
+function moveCam(){
+  const t = document.body.getBoundingClientRect().top;
 
+  camera.rotation.x = t* -0.0055;
+}
+
+document.body.onscroll = moveCam;
 
 function animate(){
   //recusive loop
@@ -61,8 +53,10 @@ function animate(){
   torus.rotation.x +=0.01;
   torus.rotation.y +=0.01;
   torus.rotation.z +=0.01;
-  //updates conroles
-  controls.update();
+
+  //creates paralax scroll
+  document.body.onscroll = moveCam;
+
   //renders everything
   renderer.render(scene, camera);
 }

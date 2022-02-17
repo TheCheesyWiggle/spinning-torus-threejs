@@ -1,6 +1,81 @@
+/*'Goldman'*/
+@import url('https://fonts.googleapis.com/css?family=Goldman&display=swap');
+/*Master Styles*/
+
 canvas{
   position: fixed;
   top: 0;
   left: 0;
+}
+
+
+main{
+
+  width: 100vw;
+  font-family:'Goldman', cursive;
+	color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+}
+
+/*Button Styles*/
+.button{
+  grid-column: 0 / span 12;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+.b1,.b2,.b3{
+	color: white;
+	font-size: 10px;
+	padding: 5px,5px,5px,5px;
+  	text-decoration: none;
+  	background-color: none;
+}
+
+.b1:hover,.b2:hover ,.b3:hover  {
+	cursor: pointer;
+}
+
+header {
+  grid-column: 2 / span 5;
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 350px;
+  text-decoration: solid;
+  text-decoration-color: black;
+}
+
+section {
+  padding: 1rem;
+  background-color: black;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 350px;
+  border: white;
+  border-style: solid;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  grid-column: 2 / span 9;
+  margin-bottom: 350px;
+}
+
+
+.left{
+  grid-column: 2 / 4;
+}
+.mid{
+  grid-column: 5/ 7;
+}
+.right{
+  grid-column: 8/ 10;
 }
 
