@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import { Sphere } from 'three';
 
 //sets up scene
 const scene = new THREE.Scene();
@@ -28,8 +29,17 @@ const material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe:true});
 //creates object
 const torus = new THREE.Mesh(geometry, material);
 
+//adding object
+const sphereGeometry = new THREE.SphereGeometry(10, 32, 16, 0 ,6.283185307179586,0,3.141592653589793 );
+//sets the looks of the object
+const sphereMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe:true});
+//creates object
+const sphere = new THREE.Mesh(sphereGeometry , sphereMaterial);
+//sets sphere posistion
+sphere.position.setZ(60);
 //adds to the scene
 scene.add(torus);
+scene.add(sphere);
 
 
 //adds grid helper
@@ -53,7 +63,10 @@ function animate(){
   torus.rotation.x +=0.01;
   torus.rotation.y +=0.01;
   torus.rotation.z +=0.01;
-
+  //sphere rotations
+  sphere.rotation.x +=0.01;
+  sphere.rotation.y +=0.01;
+  sphere.rotation.z +=0.01;
   //creates paralax scroll
   document.body.onscroll = moveCam;
 
