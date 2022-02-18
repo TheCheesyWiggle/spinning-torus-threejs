@@ -50,7 +50,7 @@ scene.add(sphere);
 function moveCam(){
   const t = document.body.getBoundingClientRect().top;
 
-  camera.rotation.x = t* -0.0055;
+  camera.rotation.x = t* -0.004;
 }
 
 document.body.onscroll = moveCam;
