@@ -49,6 +49,7 @@ header {
   margin-bottom: 350px;
   text-decoration: solid;
   text-decoration-color: black;
+  text-align: center;
 }
 
 section {
@@ -77,5 +78,11 @@ blockquote {
 }
 .right{
   grid-column: 8/ 10;
+}
+.welcome{
+  font-size: 2.5rem;
+  grid-column: 4/ 8;
+  padding-left: 1rem;
+  text-align: center
 }
 

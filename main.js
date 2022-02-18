@@ -43,9 +43,9 @@ scene.add(sphere);
 
 
 //adds grid helper
-const GridHelper = new THREE.GridHelper(200,50);
+//const GridHelper = new THREE.GridHelper(200,50);
 //adds helpers
-scene.add( GridHelper);
+//scene.add( GridHelper);
 
 function moveCam(){
   const t = document.body.getBoundingClientRect().top;
